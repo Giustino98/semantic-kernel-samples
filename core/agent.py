@@ -18,7 +18,8 @@ class SemanticKernelAgent:
             )
         )
 
-        self.system_prompt = "Il tuo obiettivo è rispondere alle domande dell'utente utilizzando le informazioni disponibili."
+        self.system_prompt = "Il tuo obiettivo è rispondere alle domande dell'utente utilizzando le informazioni disponibili. La tua ricerca deve sempre    \
+        fare affidamento alle informazioni recuperate dalla ricerca web. Se non esplicitamente indicato il numero di risultati da recuperare, utilizza 5."
         self.execution_settings: OllamaChatPromptExecutionSettings = self.kernel.get_prompt_execution_settings_from_service_id(
             service_id, OllamaChatCompletion
         )
